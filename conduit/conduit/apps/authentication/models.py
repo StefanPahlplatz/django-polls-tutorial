@@ -1,6 +1,6 @@
 import jwt
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time
 
 from django.conf import settings
 from django.contrib.auth.models import (
@@ -27,6 +27,7 @@ class UserManager(BaseUserManager):
         if email is None:
             raise TypeError('Users must have an email address.')
 
+        email = self.normalize_email(email)
         user = self.model(username=username, email=self.normalize_email(email))
         user.set_password(password)
         user.save()
@@ -73,7 +74,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # The `is_staff` flag is expected by Django to determine who can and cannot
     # log into the Django admin site. For most users, this flag will always be
-    # falsed.
+    # false.
     is_staff = models.BooleanField(default=False)
 
     # A timestamp representing when this object was created.
@@ -133,11 +134,9 @@ class User(AbstractBaseUser, PermissionsMixin):
         Generates a JSON Web Token that stores this user's ID and has an expiry
         date set to 60 days into the future.
         """
-        dt = datetime.now() + timedelta(days=60)
-
         token = jwt.encode({
             'id': self.pk,
-            'exp': int(dt.strftime('%S'))
+            'exp': datetime.now() + timedelta(days=60)
         }, settings.SECRET_KEY, algorithm='HS256')
 
         return token.decode('utf-8')
