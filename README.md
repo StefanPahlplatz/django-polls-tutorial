@@ -1,9 +1,11 @@
-## django-polls-tutorial
+# django-tutorials
 > Part 1-7 of the official django documentation.
 
-### How to run
-In `/polls-website` run the command `python3 manage.py runserver`
-- To vote go to `http://127.0.0.1:8000/polls/`
-- To view the admin page go to `http://127.0.0.1:8000/admin/`
+## conduit
+Tutorial from https://thinkster.io/tutorials/fullstack
 
-Tutorial at https://docs.djangoproject.com/en/1.11/intro/
+## polls-website
+Tutorial from https://docs.djangoproject.com/en/1.11/intro/
+
+## rest-framework
+Tutorial from http://www.django-rest-framework.org/#tutorial
