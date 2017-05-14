@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>
+        Hello World Title
+    </title>
+</head>
+
+<body>
+<h1>
+    Connection
+</h1>
+<article>
+    <span> {{ my_var | upper }}</span>
+
+    <span>
+        {% if years < 10 %}
+            You are a child
+        {% elif years < 18 %}
+            You are a teenager
+        {% else %}
+            You are an adult!
+        {% endif %}
+    </span>
+
+    <ul>
+        {% for city in array %}
+        <li>
+            {{ city }}
+        </li>
+        {% endfor %}
+    </ul>
+</article>
+</body>
+</html>
