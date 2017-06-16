@@ -4,3 +4,5 @@ web-development-with-python/work_manager/\.idea/
 web-development-with-python/work_manager/work_manager/__pycache__/
 
 web-development-with-python/work_manager/taskmanager/__pycache__/
+
+*.pyc
