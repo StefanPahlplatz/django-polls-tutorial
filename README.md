@@ -1,5 +1,5 @@
 # django-tutorials
-> Part 1-7 of the official django documentation.
+> A collection of tutorials I followed for django.
 
 ## conduit
 Tutorial from https://thinkster.io/tutorials/fullstack
